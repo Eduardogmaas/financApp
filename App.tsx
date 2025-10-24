@@ -1,21 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './src/routes';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      
-     <SignIn></SignIn>
-    </View>
-  );
+type AppProps = Record<string, never>;
+type AppState = Record<string, never>;
+
+export default class App extends React.Component<AppProps, AppState> {
+  render() {
+    return (
+      <NavigationContainer>
+        <StatusBar backgroundColor="#F04FF" barStyle={'dark-content'}translucent />
+        <Routes />
+      </NavigationContainer>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-// https://reactnavigation.org/docs/getting-started
