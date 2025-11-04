@@ -8,20 +8,18 @@ export type AuthStackParamList = {
   SignUp: undefined;
 };
 
-const AuthStack = createStackNavigator<AuthStackParamList>();
+const Stack = createStackNavigator<AuthStackParamList>();
 
 export default function AuthRoutes() {
   return (
-    <AuthStack.Navigator
-      screenOptions={{
-        headerShown: false, // oculta o cabeçalho padrão
-      }}
-    >
-      <AuthStack.Screen name="SignIn" component={SignIn} />
-      <AuthStack.Screen name="SignUp" component={SignUp} />
-    </AuthStack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+    </Stack.Navigator>
   );
 }
+
+
 
 
 // import React from 'react';
